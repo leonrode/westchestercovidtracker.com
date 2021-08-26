@@ -49,7 +49,7 @@ export default async function handler(req, res) {
   };
 
   try {
-    await clientPromise;
+    const client = await clientPromise;
 
     const dbData = client.db("covid-data").collection("data");
     let { town1, town2 } = req.query;
@@ -89,7 +89,7 @@ export default async function handler(req, res) {
         });
       }
 
-      //client.close();
+      client.close();
       res.status(200).json({ error: false, data: newResult, dataPop: dataPop });
     } else {
       const townQuery = await dbData.find({ town: town1 }).toArray();
@@ -112,7 +112,7 @@ export default async function handler(req, res) {
             ) / 100,
         });
       }
-      //client.close();
+      client.close();
       res.status(200).json({ error: false, data: newResult, dataPop: dataPop });
     }
   } catch (error) {
