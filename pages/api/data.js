@@ -1,4 +1,11 @@
-const clientPromise = require("./server");
+const { MongoClient } = require("mongodb");
+
+const uri = process.env.MONGO_URI;
+
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 export default async function handler(req, res) {
   const populations = {
@@ -49,7 +56,7 @@ export default async function handler(req, res) {
   };
 
   try {
-    const client = await clientPromise;
+    await client.connect();
 
     const dbData = client.db("covid-data").collection("data");
     let { town1, town2 } = req.query;
