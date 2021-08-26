@@ -59,7 +59,7 @@ export default async function handler(req, res) {
   try {
     //console.log(uri);
     //process.stdout.write(uri);
-
+    res.status(200).send({ uri: uri });
     await client.connect();
     res.status(200).send({ test: "yo i just connected" });
     return;
