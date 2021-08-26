@@ -57,10 +57,10 @@ export default async function handler(req, res) {
   };
 
   try {
-    console.log(uri);
-    process.stdout.write(uri);
+    //console.log(uri);
+    //process.stdout.write(uri);
     await client.connect();
-    console.log("connected");
+    //console.log("connected");
     const dbData = client.db("covid-data").collection("data");
     let { town1, town2 } = req.query;
 
