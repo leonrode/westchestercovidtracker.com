@@ -6,7 +6,7 @@ export default function DesktopFloat() {
       <div className={style.nameFloat}>
         <h3 className={style.floatName}>Leon Rode | </h3>
 
-        <a href="https://github.com/lionrocker/westchester-covid-tracker">
+        <a href="https://github.com/lionrocker/westchestercovidtracker.com">
           <i
             className="fab fa-github"
             style={{ color: "#f6f6f6", scale: "1.2", marginLeft: "10px" }}
