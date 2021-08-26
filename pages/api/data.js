@@ -60,6 +60,7 @@ export default async function handler(req, res) {
     console.log(uri);
     process.stdout.write(uri);
     await client.connect();
+    console.log("connected");
     const dbData = client.db("covid-data").collection("data");
     let { town1, town2 } = req.query;
 
@@ -126,7 +127,7 @@ export default async function handler(req, res) {
     }
   } catch (error) {
     console.error(error);
-
+    console.log(error);
     res.status(500).json({ error: true, message: error });
   }
 }
