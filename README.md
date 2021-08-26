@@ -3,10 +3,10 @@
 ![westchestercovidtracker.com site preview image](https://i.imgur.com/23fIydg.png)
 
 
-This repository contains code for the frontend and serverless functions of [westchestercovidtracker.com](westchestercovidtracker.com).
+This repository contains code for the frontend and serverless functions of [westchestercovidtracker.com](https://westchestercovidtracker.com).
 
 ## Introduction 
-[westchestercovidtracker.com](westchestercovidtracker.com) is a newly-redesigned application to view histories and trends of COVID-19 in Westchester County, NY. It features the ability to compare the presence of COVID-19 within two towns with data that's updated daily, as soon as they're available.
+[westchestercovidtracker.com](https://westchestercovidtracker.com) is a newly-redesigned application to view histories and trends of COVID-19 in Westchester County, NY. It features the ability to compare the presence of COVID-19 within two towns with data that's updated daily, as soon as they're available.
 
 ## Technical Details
 
