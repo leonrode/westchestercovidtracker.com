@@ -2,7 +2,7 @@
 const { MongoClient, LoggerLevel } = require("mongodb");
 
 const uri = process.env.MONGO_URI;
-
+console.log(uri);
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
