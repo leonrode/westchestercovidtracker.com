@@ -59,9 +59,10 @@ export default async function handler(req, res) {
   try {
     //console.log(uri);
     //process.stdout.write(uri);
-    res.status(200).send({ test: "does this work???" });
-    return;
+
     await client.connect();
+    res.status(200).send({ test: "yo i just connected" });
+    return;
     process.stdout.write("connected to client on request");
     const dbData = client.db("covid-data").collection("data");
     let { town1, town2 } = req.query;
