@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.title {
+  font-size: 4rem;
+  color: #201E1F;
+  font-weight: 800;
+
+  margin-top:50px;
+}
+
+.subtitle {
+  color: #666666;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 1.25rem;
+}
+
+.mainGraphsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+
+  .main {
+    overflow-y: visible;
+  }
+  .title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 25px;
+
+  }
+
+  .title, .subtitle {
+    padding: 0px 10px 0px 10px;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .mainGraphsContainer {
+    margin-top: 25px;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+  }
+}

@@ -1,0 +1,53 @@
+.nameFloat, .sourceFloat {
+  background-color: #201E1F;
+  border-radius: 7px;
+  position: fixed;
+
+  padding: 10px 15px;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0px 5px 10px #c0c0c0;
+  color: #f6f6f6;
+  font-weight: 400;
+  right: 10px;
+  font-size: 0.9rem;
+}
+
+.disclaimer{
+  color: #666666;
+  font-weight: 400;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.nameFloat {
+  top: 60px;
+
+}
+.sourceFloat {
+  top: 10px;
+}
+
+.sources {
+  font-weight: 400;
+}
+.floatName {
+  font-weight: 400;
+}
+@media (max-width: 768px ){
+  .nameFloat, .sourceFloat {
+    position: initial;
+    font-size: 0.8rem;
+  }
+
+  .sourceFloat {
+    margin-top: 10px;
+  }
+
+  .disclaimer {
+    position: initial;
+    margin-top: 10px;
+  }
+}
