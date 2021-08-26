@@ -1,12 +1,4 @@
-// TODO: ADD DB CONNECTION
-const { MongoClient, LoggerLevel } = require("mongodb");
-
-const uri = process.env.MONGO_URI;
-
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const clientPromise = require("./server");
 
 export default async function handler(req, res) {
   const populations = {
@@ -59,8 +51,8 @@ export default async function handler(req, res) {
   try {
     //console.log(uri);
     //process.stdout.write(uri);
-    res.status(200).send({ uri: uri });
-    await client.connect();
+
+    await clientPromise;
     res.status(200).send({ test: "yo i just connected" });
     return;
     process.stdout.write("connected to client on request");
