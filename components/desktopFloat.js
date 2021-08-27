@@ -14,7 +14,7 @@ export default function DesktopFloat() {
         </a>
 
         <h3 className={style.floatName}>&nbsp; | </h3>
-        <a href="mailto:leon.rode13@gmail.com">
+        <a href="mailto:westchestercovidtracker@gmail.com">
           <i
             className="fas fa-envelope"
             style={{ color: "#f6f6f6", scale: "1.2", marginLeft: "10px" }}
