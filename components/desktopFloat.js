@@ -4,9 +4,12 @@ export default function DesktopFloat() {
   return (
     <>
       <div className={style.nameFloat}>
-        <a href="https://leonro.de">
-          <h3 className={style.floatName}>Leon Rode | </h3>
-        </a>
+        <h3 className={style.floatName}>
+          <span>
+            <a href="https://leonro.de">Leon Rode</a>
+          </span>{" "}
+          |{" "}
+        </h3>
 
         <a href="https://github.com/leonrode/westchestercovidtracker.com">
           <i
