@@ -1,6 +1,6 @@
 # westchestercovidtracker.com
 
-![westchestercovidtracker.com site preview image](https://i.imgur.com/23fIydg.png)
+![westchestercovidtracker.com site preview image](https://i.imgur.com/6KxNDND.png)
 
 
 This repository contains code for the frontend and serverless functions of [westchestercovidtracker.com](https://westchestercovidtracker.com).
