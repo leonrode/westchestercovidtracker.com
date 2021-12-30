@@ -22,4 +22,4 @@ cd westchestercovidtracker.com
 npm install
 npm run dev
 ```
-You'll need to set `MONGO_URI` as an environment variable, pointing to your MongoDB database.
+You'll need to set `URI` as an environment variable, pointing to your MongoDB database.
