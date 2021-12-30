@@ -1,25 +1,96 @@
 .townLabel {
   text-align: center;
+
   font-size: 2.2rem;
-  font-weight: 800;
+  font-weight: 400;
+
   margin-bottom: 10px;
 }
 
 .subtitle {
   text-align: center;
+
   font-size: 1.5rem;
   font-weight: 400;
+
   color: #666666;
-  margin-bottom: 20px;
 }
 
+
+
+.black {
+  color: #201E1F;
+  font-weight: bold;
+}
+
+.blue {
+  color: #0076ff;
+  font-weight: bold;
+}
+
+.definition {
+  margin-left: 10px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.definition:hover > .popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  background-color: #f6f6f6;
+
+  rotate: 45deg;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  position: absolute;
+}
+
+.popup {
+  z-index: 999;
+
+  position: absolute;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  width: 250px;
+
+  background-color: #f6f6f6;
+
+  left: 50%;
+  transform: translateX(-50%);
+  top: 110%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  text-align: center;
+
+  transition: 0.1s linear opacity, 0.1s linear visibility;
+}
 @media (max-width: 768px) {
   .townLabel {
     font-size: 1.7rem;
     margin-left: 25px;
-  } .subtitle {
+  }
+  .subtitle {
     font-size: 1.2rem;
-    margin-bottom: 10px;
-    margin-left: 25px;
   }
 }

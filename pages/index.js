@@ -1,11 +1,12 @@
 import Head from "next/head";
 
-import GraphContainer from "../components/graphContainer";
-import DesktopFloat from "../components/desktopFloat";
+import ActiveGraphContainer from "../components/ActiveGraphContainer";
+import DensityGraphContainer from "../components/DensityGraphContainer";
+import Footer from "../components/Footer";
 
 import style from "../styles/main.module.css";
 
-export default function Home() {
+export default function Home({ activeData, densityData }) {
   return (
     <div>
       <Head>
@@ -45,11 +46,30 @@ export default function Home() {
         </h3>
 
         <div className={style.mainGraphsContainer}>
-          <GraphContainer subtitle="Active Cases" showPer10K={false} />
-          <GraphContainer subtitle="Active Cases per 10K" showPer10K={true} />
+          <ActiveGraphContainer data={activeData} />
+          <DensityGraphContainer data={densityData} />
         </div>
-        <DesktopFloat />
+        <Footer />
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const activeRes = await fetch(
+    "http://localhost:3000/api/active?town1=Westchester"
+  );
+  const activeData = await activeRes.json();
+
+  const densityRes = await fetch(
+    "http://localhost:3000/api/density?town1=Westchester"
+  );
+  const densityData = await densityRes.json();
+
+  const analyticsRes = await fetch("http://localhost:3000/api/analytics", {
+    method: "POST",
+  });
+  return {
+    props: { activeData: activeData.data, densityData: densityData.data },
+  };
 }
