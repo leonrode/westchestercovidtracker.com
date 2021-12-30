@@ -20,15 +20,15 @@ function CustomTooltip({ active, payload, label, town1, town2, showDecimal }) {
         <p className={style.tooltipTown1}>
           {town1}:{" "}
           {showDecimal
-            ? payload[0].value.toFixed(1)
-            : payload[0].value.toLocaleString("en-us")}
+            ? payload[0]?.value.toFixed(1)
+            : payload[0]?.value.toLocaleString("en-us")}
         </p>
         {town2 !== "None" && (
           <p className={style.tooltipTown2}>
             {town2}:{" "}
             {showDecimal
-              ? payload[1].value.toFixed(1)
-              : payload[1].value.toLocaleString("en-us")}
+              ? payload[1]?.value.toFixed(1)
+              : payload[1]?.value.toLocaleString("en-us")}
           </p>
         )}
       </div>
