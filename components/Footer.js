@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function Footer() {
   useEffect(() => {
     (async () => {
-      const analyticsRes = await fetch("https://westchestercovidtracker.com/api/analytics", {
+      const analyticsRes = await fetch("/api/analytics", {
         method: "POST",
       });
     })();
