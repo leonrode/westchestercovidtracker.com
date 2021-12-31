@@ -1,6 +1,16 @@
 import style from "../styles/float.module.css";
 
+import { useEffect } from "react";
+
 export default function Footer() {
+  useEffect(() => {
+    (async () => {
+      const analyticsRes = await fetch("https://westchestercovidtracker.com/api/analytics", {
+        method: "POST",
+      });
+    })();
+  }, []);
+  
   return (
     <div className={style.wordsContainer}>
       <h5 className={style.disclaimer}>
