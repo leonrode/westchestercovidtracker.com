@@ -66,9 +66,6 @@ export async function getServerSideProps() {
   );
   const densityData = await densityRes.json();
 
-  const analyticsRes = await fetch("https://westchestercovidtracker.com/api/analytics", {
-    method: "POST",
-  });
   return {
     props: { activeData: activeData.data, densityData: densityData.data },
   };
