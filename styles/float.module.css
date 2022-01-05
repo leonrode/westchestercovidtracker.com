@@ -1,0 +1,49 @@
+.wordsContainer {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.disclaimer{
+  color: #666666;
+  font-weight: 400;
+  margin: 0 5px;
+
+}
+
+.something {
+  color: #666666;
+  font-weight: 400;
+}
+.source {
+  color: #666666;
+  font-weight: 400;
+
+}
+.author {
+  color: #666666;
+  font-weight: 400;
+  margin: 0 5px;
+
+}
+
+@media (max-width: 768px ){
+
+  .wordsContainer {
+
+    display: flex;
+    flex-direction: column;
+    position: initial;
+    margin-top: 20px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .source, .disclaimer, .author {
+    position: initial;
+    text-align: center;
+    margin: 3px 0;
+  }
+
+}
