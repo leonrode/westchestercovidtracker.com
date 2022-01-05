@@ -33,6 +33,8 @@
 
   .main {
     overflow-y: visible;
+    overflow-x: hidden;
+
   }
   .title {
     text-align: center;
