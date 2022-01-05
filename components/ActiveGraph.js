@@ -44,7 +44,7 @@ export default function ActiveGraph({ casesData, town1, town2, showDecimal }) {
       <ResponsiveContainer width="100%" height={350}>
         <LineChart
           data={casesData}
-          margin={{ left: 0 }}
+          margin={{ left: 0, right: 35 }}
           height={isMobile ? 300 : 400}
         >
           <Line
@@ -63,7 +63,7 @@ export default function ActiveGraph({ casesData, town1, town2, showDecimal }) {
               dot={false}
             />
           )}
-          <XAxis dataKey="date"></XAxis>
+          <XAxis dataKey="date" minTickGap={20}></XAxis>
           <YAxis></YAxis>
           <Tooltip
             content={

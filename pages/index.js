@@ -57,12 +57,12 @@ export default function Home({ activeData, densityData }) {
 
 export async function getServerSideProps() {
   const activeRes = await fetch(
-    "https://westchestercovidtracker.com/api/active?town1=Westchester"
+    "http://localhost:3000/api/active?town1=Westchester"
   );
   const activeData = await activeRes.json();
 
   const densityRes = await fetch(
-    "https://westchestercovidtracker.com/api/density?town1=Westchester"
+    "http://localhost:3000/api/density?town1=Westchester"
   );
   const densityData = await densityRes.json();
 
