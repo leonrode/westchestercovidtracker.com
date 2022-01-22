@@ -1,12 +1,29 @@
 import Head from "next/head";
 
+import LoadingPanel from "../components/LoadingPanel";
+
 import ActiveGraphContainer from "../components/ActiveGraphContainer";
 import DensityGraphContainer from "../components/DensityGraphContainer";
 import Footer from "../components/Footer";
 
 import style from "../styles/main.module.css";
 
-export default function Home({ activeData, densityData }) {
+import { useState, useEffect } from "react";
+export default function Home() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const activeRes = await fetch("/api/active?town1=Westchester");
+      const activeData = await activeRes.json();
+
+      const densityRes = await fetch("/api/density?town1=Westchester");
+      const densityData = await densityRes.json();
+
+      setData({ activeData: activeData.data, densityData: densityData.data });
+    })();
+  }, []);
+
   return (
     <div>
       <Head>
@@ -45,28 +62,16 @@ export default function Home({ activeData, densityData }) {
           View COVID-19 data by municipality in Westchester County
         </h3>
 
-        <div className={style.mainGraphsContainer}>
-          <ActiveGraphContainer data={activeData} />
-          <DensityGraphContainer data={densityData} />
-        </div>
+        <LoadingPanel hide={!!data} />
+
+        {data && (
+          <div className={style.mainGraphsContainer}>
+            <ActiveGraphContainer data={data.activeData} />
+            <DensityGraphContainer data={data.densityData} />
+          </div>
+        )}
         <Footer />
       </main>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  const activeRes = await fetch(
-    "http://localhost:3000/api/active?town1=Westchester"
-  );
-  const activeData = await activeRes.json();
-
-  const densityRes = await fetch(
-    "http://localhost:3000/api/density?town1=Westchester"
-  );
-  const densityData = await densityRes.json();
-
-  return {
-    props: { activeData: activeData.data, densityData: densityData.data },
-  };
 }

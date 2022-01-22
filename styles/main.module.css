@@ -26,7 +26,29 @@
   display: flex;
   justify-content: space-evenly;
 
-  margin-top: 100px;
+  margin-top: 40px;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 999;
+  background-color: #f6f6f6;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.25s linear opacity, 0.25s linear visibility;
+}
+
+.panelHide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media (max-width: 1024px){
