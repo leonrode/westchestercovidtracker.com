@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Westchester Covid Tracker repository
-=======
 # westchestercovidtracker.com
 
 ![westchestercovidtracker.com site preview image](https://i.imgur.com/x0sn6bU.png)
@@ -26,4 +23,3 @@ npm install
 npm run dev
 ```
 You'll need to set `URI` as an environment variable, pointing to your MongoDB database.
->>>>>>> 44d12ca666d72c4ca442d711d250183cc0c1797b
