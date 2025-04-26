@@ -1,8 +1,8 @@
 import { promises as fs } from 'fs';
-
+import path from "path";
 export default async function handler(req, res) {
   try {
-    const raw = await fs.readFile('../../data.json', 'utf8');
+    const raw = await fs.readFile(path.join(process.cwd(), 'data.json'), 'utf8');
     const data = JSON.parse(raw);
     let { town1, town2 } = req.query;
 

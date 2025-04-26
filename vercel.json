@@ -1,0 +1,10 @@
+{
+    "functions": {
+      "api/active.js": {
+        "includeFiles": "data.json"
+      },
+      "api/density.js": {
+        "includeFiles": "data.json"
+      }
+    }
+  }
