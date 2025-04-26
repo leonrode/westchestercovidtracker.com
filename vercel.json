@@ -1,9 +1,9 @@
 {
     "functions": {
-      "api/active.js": {
+      "pages/api/active.js": {
         "includeFiles": "data.json"
       },
-      "api/density.js": {
+      "pages/api/density.js": {
         "includeFiles": "data.json"
       }
     }
