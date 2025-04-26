@@ -6,7 +6,7 @@ export default function ActiveCaseDefinition() {
   return (
     <div className={style.definition}>
       <HiQuestionMarkCircle size={30} color="#969696" />
-      <div className={style.popup}>Positive cases within the last 14 days</div>
+      <div className={style.popup}>Number of positive cases during 14-day past window</div>
     </div>
   );
 }

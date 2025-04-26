@@ -8,7 +8,6 @@ import {
   Tooltip,
 } from "recharts";
 
-import { isMobile } from "react-device-detect";
 
 import style from "../styles/graph.module.css";
 
@@ -44,10 +43,10 @@ export default function DensityGraph({ casesData, town1, town2, showDecimal }) {
         <LineChart
           data={casesData}
           margin={{ left: 0, right: 35 }}
-          height={isMobile ? 300 : 400}
+          height={350}
         >
           <Line
-            strokeWidth={3 - isMobile}
+            strokeWidth={3}
             type="monotone"
             dataKey="town1"
             stroke="#201E1F"
@@ -55,7 +54,7 @@ export default function DensityGraph({ casesData, town1, town2, showDecimal }) {
           />
           {casesData[0]?.town2 && (
             <Line
-              strokeWidth={3 - isMobile}
+              strokeWidth={3}
               type="monotone"
               dataKey="town2"
               stroke="#0076ff"

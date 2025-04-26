@@ -1,17 +1,9 @@
-const { MongoClient } = require("mongodb");
-
-const uri = process.env.URI;
-
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+import { promises as fs } from 'fs';
 
 export default async function handler(req, res) {
   try {
-    await client.connect();
-
-    const dbData = client.db("covid-data").collection("data");
+    const raw = await fs.readFile(process.cwd() + '/data.json', 'utf8');
+    const data = JSON.parse(raw);
     let { town1, town2 } = req.query;
 
     if (town1 === "Westchester") town1 = "Totals";
@@ -19,8 +11,8 @@ export default async function handler(req, res) {
     if (town2) {
       // grab full timeline of both towns
 
-      const town1Query = await dbData.find({ town: town1 }).toArray();
-      const town2Query = await dbData.find({ town: town2 }).toArray();
+      const town1Query = data.filter(data => data.town == town1).sort((x, y) => Date.parse(x.date).valueOf() - Date.parse(y.date).valueOf());
+      const town2Query = data.filter(data => data.town == town2).sort((x, y) => Date.parse(x.date).valueOf() - Date.parse(y.date).valueOf());
 
       // merge both arrays into one array
       let newResult = [];
@@ -34,10 +26,9 @@ export default async function handler(req, res) {
         newResult.push(object);
       }
 
-      client.close();
       res.status(200).json({ error: false, data: newResult });
     } else {
-      const townQuery = await dbData.find({ town: town1 }).toArray();
+      const townQuery = data.filter(data => data.town == town1).sort((x, y) => Date.parse(x.date).valueOf() - Date.parse(y.date).valueOf());;
 
       let newResult = [];
       for (let i = 0; i < townQuery.length; i++) {
@@ -47,7 +38,6 @@ export default async function handler(req, res) {
         });
       }
 
-      client.close();
       res.status(200).json({ error: false, data: newResult });
     }
   } catch (error) {

@@ -30,7 +30,7 @@ export default function Home() {
         <title>Westchester COVID-19 Tracker</title>
         <meta
           name="description"
-          content="View Westchester County's updated-daily COVID-19 timeline on our free online COVID-19 tracking platform."
+          content="View Westchester County's updated COVID-19 timeline on our free online COVID-19 tracking platform."
         />
         <meta name="robots" content="index, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,6 +57,12 @@ export default function Home() {
         />
       </Head>
       <main className={style.main}>
+        <h1 className={style.inactive}>
+          This site is inactive. Data shown here is for historical keeping purposes only.
+        </h1>
+        <p className={style.inactiveSub}>
+          Contact me using the links in the lower-right corner for the data.
+        </p>
         <h1 className={style.title}>Westchester COVID-19</h1>
         <h3 className={style.subtitle}>
           View COVID-19 data by municipality in Westchester County
